@@ -45,6 +45,23 @@ Text &Text::operator=(const Text &txt)
     return *this;
 }
 
+void Text::append(const char *pCstr)
+{
+    const char *old = this->pStore;
+    int newLength = strlen(pCstr) + strlen(this->pStore) + 1;
+    if (this->pStore != nullptr) {
+        delete[](this->pStore); 
+    }
+    this->pStore = new char[newLength];
+    strcpy(this->pStore, old);
+    strcat(this->pStore, pCstr);
+}
+
+void Text::append(const Text &txt)
+{
+    this->append(txt.getCstring());
+}
+
 const char *Text::getCstring() const
 {
     return this->pStore;

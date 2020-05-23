@@ -13,6 +13,11 @@ int main()
 	cout << "t2: " << t2 << endl;
 	cout << "t3: " << t3 << endl;
 
+	t1.append("The ");
+	cout << "t1: " << t1 << endl;
+	t1.append(t2);
+	cout << "t1: " << t1 << endl;
+
 	t2 = Text(" jumps over  ");	
 	cout << "t2:" << t2 << endl;
 

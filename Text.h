@@ -14,6 +14,8 @@ public:
     virtual ~Text();
     void assign(const char *pCstr);
     void assign(const Text &txt);
+    void append(const char *pCstr);
+    void append(const Text &txt);
     const char *getCstring() const;
     Text &operator=(const Text &txt);
 };
