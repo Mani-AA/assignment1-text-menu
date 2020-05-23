@@ -66,6 +66,21 @@ void Text::append(const Text &txt)
     this->append(txt.getCstring());
 }
 
+void Text::clear()
+{
+    this->assign("");
+}
+
+int Text::length()
+{
+    return strlen(this->pStore);
+}
+
+bool Text::isEmpty()
+{
+    return this->length() == 0;
+}
+
 const char *Text::getCstring() const
 {
     return this->pStore;

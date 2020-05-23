@@ -16,6 +16,9 @@ public:
     void assign(const Text &txt);
     void append(const char *pCstr);
     void append(const Text &txt);
+    void clear();
+    int length();
+    bool isEmpty();
     const char *getCstring() const;
     Text &operator=(const Text &txt);
 };
