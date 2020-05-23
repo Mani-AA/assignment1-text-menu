@@ -5,7 +5,7 @@ using namespace std;
 class Text
 {
 private:
-    char *pStore = nullptr;
+    char *pStore;
 
 public:
     Text();

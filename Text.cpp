@@ -4,6 +4,8 @@
 
 using namespace std;
 
+char Text::*pStore = nullptr;
+
 Text::Text() : Text("")
 {
 }
@@ -19,13 +21,14 @@ Text::Text(const Text &txt) : Text(txt.getCstring())
 
 Text::~Text()
 {
-    delete[](this->pStore); 
+    delete[](this->pStore);
 }
 
 void Text::assign(const char *pCstr)
 {
-    if (this->pStore != nullptr) {
-        delete[](this->pStore); 
+    if (this->pStore != nullptr)
+    {
+        delete[](this->pStore);
     }
     this->pStore = new char[strlen(pCstr) + 1];
     strcpy(this->pStore, pCstr);
@@ -49,8 +52,9 @@ void Text::append(const char *pCstr)
 {
     const char *old = this->pStore;
     int newLength = strlen(pCstr) + strlen(this->pStore) + 1;
-    if (this->pStore != nullptr) {
-        delete[](this->pStore); 
+    if (this->pStore != nullptr)
+    {
+        delete[](this->pStore);
     }
     this->pStore = new char[newLength];
     strcpy(this->pStore, old);

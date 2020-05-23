@@ -26,7 +26,7 @@ void demoText()
 	t1.append(t2);
 	cout << "t1: " << t1 << endl;
 
-	t2 = Text(" jumps over ");	
+	t2 = Text(" jumps over ");
 	cout << "t2:" << t2 << endl;
 
 	t3.assign("a lazy dog");
