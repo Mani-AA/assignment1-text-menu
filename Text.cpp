@@ -28,7 +28,7 @@ void Text::assign(const char *pCstr)
 {
     if (this->pStore != nullptr)
     {
-        delete[](this->pStore);
+        delete[] this->pStore;
     }
     this->pStore = new char[strlen(pCstr) + 1];
     strcpy(this->pStore, pCstr);
@@ -54,7 +54,7 @@ void Text::append(const char *pCstr)
     int newLength = strlen(pCstr) + strlen(this->pStore) + 1;
     if (this->pStore != nullptr)
     {
-        delete[](this->pStore);
+        delete[] this->pStore;
     }
     this->pStore = new char[newLength];
     strcpy(this->pStore, old);
