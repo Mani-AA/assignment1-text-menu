@@ -5,16 +5,17 @@ using namespace std;
 class Text
 {
 private:
-    char *pStore;
+    char *pStore = nullptr;
 
 public:
     Text();
     Text(const char *pCstr);
     Text(const Text &text);
-    virtual ~Text(); 
+    virtual ~Text();
+    void assign(const char *pCstr);
+    void assign(const Text &txt);
     const char *getCstring() const;
-    Text & operator=(const Text &txt);
-
+    Text &operator=(const Text &txt);
 };
 
 ostream &operator<<(ostream &sout, const Text &txt);

@@ -10,27 +10,37 @@ Text::Text() : Text("")
 
 Text::Text(const char *pCstr)
 {
-    this->pStore = new char[strlen(pCstr) + 1];
-    strcpy(this->pStore, pCstr);
+    this->assign(pCstr);
 }
 
 Text::Text(const Text &txt) : Text(txt.getCstring())
 {
 }
 
-// destructor
 Text::~Text()
 {
-    delete[] this->pStore; 
+    delete[](this->pStore); 
+}
+
+void Text::assign(const char *pCstr)
+{
+    if (this->pStore != nullptr) {
+        delete[](this->pStore); 
+    }
+    this->pStore = new char[strlen(pCstr) + 1];
+    strcpy(this->pStore, pCstr);
+}
+
+void Text::assign(const Text &txt)
+{
+    this->assign(txt.getCstring());
 }
 
 Text &Text::operator=(const Text &txt)
 {
     if (this != &txt)
     {
-        delete[] this->pStore;
-        this->pStore = new char[strlen(txt.getCstring()) + 1];
-        strcpy(this->pStore, txt.getCstring());
+        this->assign(txt);
     }
     return *this;
 }
