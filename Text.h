@@ -11,6 +11,7 @@ public:
     Text();
     Text(const char *pCstr);
     Text(const Text &text);
+    virtual ~Text(); 
     const char *getCstring() const;
     Text & operator=(const Text &txt);
 
