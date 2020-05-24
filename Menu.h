@@ -30,7 +30,6 @@ public:
     void pop_back();
     void insert(int index, const ElemType &e);
     void remove(int index);
-    void error(std::string msg) const;
 };
 
 ostream &operator<<(std::ostream &sout, const Menu &menu);
