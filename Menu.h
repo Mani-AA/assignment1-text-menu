@@ -5,7 +5,7 @@
 #include "Text.h"
 
 using ElemType = Text;
-using namespace std;
+using std::ostream;
 
 class Menu
 {

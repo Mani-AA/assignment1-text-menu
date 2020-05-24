@@ -2,7 +2,10 @@
 #include "Menu.h"
 #include <cstring>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
+using std::ostream;
 
 Menu::Menu()
 {
@@ -138,6 +141,38 @@ void Menu::toStream(ostream &sout) const
     }
 
     sout << "??";
+}
+
+ElemType Menu::toString() const
+{
+    ElemType repr;
+
+    repr.append("\n");
+    if (!top_message.isEmpty())
+    {
+        repr.append(top_message);
+        repr.append("\n");
+    }
+
+    for (int k = 0; k < this->count; ++k)
+    {
+        repr.append("  ");
+        repr.append(std::to_string(k+1).c_str());
+        repr.append(": ");
+        repr.append(option_list[k]);
+        repr.append("\n");
+    }
+
+    if (!bottom_message.isEmpty())
+    {
+        repr.append(bottom_message);
+        repr.append("\n");
+    }
+
+    repr.append("??");
+    repr.append("\n");
+    
+    return repr;
 }
 
 void Menu::set_top_message(const ElemType &m)

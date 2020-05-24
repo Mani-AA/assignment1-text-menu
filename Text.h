@@ -2,9 +2,7 @@
 #define TEXT_H
 
 #include <iostream>
-
-using namespace std;
-
+using std::ostream;
 class Text
 {
 private:

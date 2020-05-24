@@ -2,15 +2,17 @@
 #include "Text.h"
 #include "Menu.h"
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
 
 void demoText();
 void demoMenu();
 
 int main()
 {
-	//demoText();
-	demoMenu();
+	demoText();
+	//demoMenu();
 	return 0;
 }
 

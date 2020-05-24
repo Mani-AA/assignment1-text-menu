@@ -2,7 +2,9 @@
 #include "Text.h"
 #include <cstring>
 
-using namespace std;
+using std::cout;
+using std::endl;
+using std::ostream;
 
 char Text::*pStore = nullptr;
 
