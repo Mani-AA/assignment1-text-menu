@@ -16,7 +16,7 @@ private:
     ElemType top_message;
     ElemType bottom_message;
     void double_capacity();
-    void deepCopy(const Menu &m);
+    void deepCopy(const Menu &mnu);
 
 public:
     Menu();

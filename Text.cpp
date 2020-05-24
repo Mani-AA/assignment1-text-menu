@@ -6,7 +6,7 @@ using std::cout;
 using std::endl;
 using std::ostream;
 
-char Text::*pStore = nullptr;
+char Text::*pStore{nullptr};
 
 Text::Text() : Text("")
 {
