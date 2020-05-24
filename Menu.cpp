@@ -27,13 +27,13 @@ int Menu::read_option_number()
         cout << *this;
         //Read user's input
         cin >> choice;
-        if ((this->size() == 0) || ((choice < count) && (choice > 0)))
+        if ((this->size() == 0) || ((choice <= count) && (choice > 0)))
         {
             break;
         }
         else
         {
-            cout << "Invalid choice" << choice << "It must be in the range [1, " << count - 1 << "]"<< endl;
+            cout << "Invalid choice " << choice << ". It must be in the range [1, " << count  << "]"<< endl;
         }
     }
     

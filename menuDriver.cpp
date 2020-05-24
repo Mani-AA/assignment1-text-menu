@@ -25,9 +25,15 @@ void demoMenu()
 	int choice = menu.read_option_number();
 	cout << "you entered: " << choice << endl;
 
-	//4) 
+	//4) Add an option to our menu
 	menu.push_back("Pepsi");
 	cout << menu << endl;
+
+	//5
+	menu.push_back("Apple juice");
+	menu.push_back("Root beer");
+	choice = menu.read_option_number();
+	cout << "you entered: " << choice << endl;
 	
 	/**
 	menu.push_back("Pepsi");
