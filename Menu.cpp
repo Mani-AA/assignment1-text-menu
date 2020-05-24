@@ -6,8 +6,24 @@ using namespace std;
 
 Menu::Menu()
 {
+    this->capacity = 1;
+    this->count = 0;
+    this->option_list = new ElemType[this->capacity];
+}
 
-    this->option_list = nullptr;
+Menu::~ Menu()
+{ 
+    delete[] option_list;
+}
+
+int Menu::getCapacity() const
+{
+    return this->capacity;
+}
+
+int Menu::size() const 
+{
+    return count;
 }
 
 void Menu::toStream(ostream& sout) const
