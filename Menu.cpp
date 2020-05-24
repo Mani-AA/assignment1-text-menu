@@ -98,6 +98,11 @@ void Menu::push_back(const ElemType &e)
     this->count++;
 }
 
+void Menu::push_back(const char *pOption)
+{
+    this->push_back(ElemType(pOption));
+}
+
 void Menu::insert(int index, const ElemType &e)
 {
     if (this->isFull())

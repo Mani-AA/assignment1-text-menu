@@ -24,6 +24,7 @@ public:
     virtual ~Menu();
     void insert(int index, const ElemType &e);
     void push_back(const ElemType &e);
+    void push_back(const char *pOption);
     void remove(int index);
     int size() const;
     int getCapacity() const;
