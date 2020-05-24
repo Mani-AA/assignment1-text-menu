@@ -21,11 +21,15 @@ void demoMenu()
 	//2) Print and empty menu
 	cout << menu << endl;
 
-	// 
-	/**
+	//3) Display the menu and read user's input 
 	int choice = menu.read_option_number();
 	cout << "you entered: " << choice << endl;
 
+	//4) 
+	menu.push_back("Pepsi");
+	cout << menu << endl;
+	
+	/**
 	menu.push_back("Pepsi");
 	menu.push_back("Apple juice");
 	menu.push_back("Root beer");

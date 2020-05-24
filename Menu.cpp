@@ -20,9 +20,23 @@ Menu::~Menu()
 
 int Menu::read_option_number()
 {
-    int choice;
-    cin >> choice;
-    cout << *this;
+    int choice{0};
+    while (true)
+    {
+        //Print the menu
+        cout << *this;
+        //Read user's input
+        cin >> choice;
+        if ((this->size() == 0) || ((choice < count) && (choice > 0)))
+        {
+            break;
+        }
+        else
+        {
+            cout << "Invalid choice" << choice << "It must be in the range [1, " << count - 1 << "]"<< endl;
+        }
+    }
+    
     return choice;
 }
 
