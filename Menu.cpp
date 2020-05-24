@@ -85,6 +85,11 @@ void Menu::set_bottom_message(const ElemType &m)
     this->bottom_message = m;
 }
 
+void Menu::pop_back()
+{
+    this->count--;
+}
+
 ostream &operator<<(ostream &sout, const Menu &menu)
 {
     menu.toStream(sout);

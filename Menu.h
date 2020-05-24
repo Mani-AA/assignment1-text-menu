@@ -27,6 +27,7 @@ public:
     void double_capacity();
     void set_top_message(const ElemType &m);
     void set_bottom_message(const ElemType &m);
+    void pop_back();
 };
 
 ostream &operator<<(std::ostream &sout, const Menu &menu);

@@ -28,6 +28,9 @@ void demoMenu()
 	menu.set_top_message("Choose your thirst crusher");
 	menu.set_bottom_message("Enter a drink number");
 	cout << menu << endl;
+
+	menu.pop_back();
+	cout << menu << endl;
 }
 
 void demoText()
