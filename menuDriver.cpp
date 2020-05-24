@@ -11,8 +11,16 @@ void demoMenu();
 
 int main()
 {
+	cout << "start of demoText:" << endl;
 	demoText();
-	//demoMenu();
+	cout << "end of demoText" << endl;
+
+	cout << endl;
+
+	cout << "start of demoMenu:" << endl;
+	demoMenu();
+	cout << "end of demoMenu" << endl;
+
 	return 0;
 }
 
