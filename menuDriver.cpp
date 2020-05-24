@@ -30,6 +30,7 @@ void demoMenu()
 	cout << menu << endl;
 
 	menu.pop_back();
+	menu.insert(2, "Icded tea with lemon");
 	cout << menu << endl;
 }
 

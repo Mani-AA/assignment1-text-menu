@@ -51,6 +51,24 @@ void Menu::push_back(const ElemType &e)
     this->count++;
 }
 
+void Menu::insert(int index, const ElemType &e)
+{
+    if (this->size() == this->getCapacity())
+    {
+        double_capacity();
+    }
+
+    // shift elements forward 
+    for (int i = this->count; i >= index; i--) 
+    {
+        this->option_list[i] = this->option_list[i - 1]; 
+    }
+
+    // insert element at position index
+    this->option_list[index - 1] = e;
+    this->count++;
+}
+
 int Menu::getCapacity() const
 {
     return this->capacity;
@@ -88,6 +106,12 @@ void Menu::set_bottom_message(const ElemType &m)
 void Menu::pop_back()
 {
     this->count--;
+}
+
+void Menu::error(std::string msg) const
+{
+    std::cerr << msg << "\n";
+    exit(EXIT_FAILURE);
 }
 
 ostream &operator<<(ostream &sout, const Menu &menu)
