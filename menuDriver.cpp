@@ -33,6 +33,10 @@ void demoMenu()
 	menu.insert(2, "Icded tea with lemon");
 	int choice = menu.read_option_number();
 	cout << "you entered: " << choice << endl;
+
+	menu.pop_back();
+	menu.remove(1);
+	cout << menu << endl;
 }
 
 void demoText()

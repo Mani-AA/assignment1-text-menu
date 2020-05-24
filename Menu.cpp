@@ -70,6 +70,17 @@ void Menu::insert(int index, const ElemType &e)
     this->count++;
 }
 
+void Menu::remove(int index)
+{
+    // shift elements forward 
+    for (int i = index; i < count; i++) 
+    {
+        this->option_list[i-1] = this->option_list[i]; 
+    }
+
+    this->count--;
+}
+
 int Menu::getCapacity() const
 {
     return this->capacity;
@@ -87,7 +98,7 @@ void Menu::toStream(ostream &sout) const
 
     for (int k = 0; k < this->count; ++k)
     {
-        sout << k + 1 << ": " << option_list[k] << endl;
+        sout << "  " << k + 1 << ": " << option_list[k] << endl;
     }
 
     sout << bottom_message << endl;
