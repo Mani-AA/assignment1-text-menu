@@ -185,7 +185,6 @@ ElemType Menu::toString() const
     }
 
     repr.append("??");
-    repr.append("\n");
 
     return repr;
 }

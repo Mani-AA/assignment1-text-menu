@@ -11,15 +11,15 @@ void demoMenu();
 
 int main()
 {
-	cout << "start of demoText:" << endl;
+	cout << "Start of demoText:" << endl;
 	demoText();
-	cout << "end of demoText" << endl;
+	cout << "End of demoText" << endl;
 
 	cout << endl;
 
-	cout << "start of demoMenu:" << endl;
+	cout << "Start of demoMenu:" << endl;
 	demoMenu();
-	cout << "end of demoMenu" << endl;
+	cout << "End of demoMenu" << endl;
 
 	return 0;
 }
