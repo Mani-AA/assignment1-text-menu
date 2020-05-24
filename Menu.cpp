@@ -72,7 +72,7 @@ void Menu::insert(int index, const ElemType &e)
 
 void Menu::remove(int index)
 {
-    // shift elements forward 
+    // shift elements backward 
     for (int i = index; i < count; i++) 
     {
         this->option_list[i-1] = this->option_list[i]; 
