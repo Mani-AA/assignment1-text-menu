@@ -10,11 +10,11 @@ using namespace std;
 class Menu
 {
 private:
-    Text *option_list;
+    ElemType *option_list;
     int capacity;
     int count;
-    Text top_message;
-    Text bottom_message;
+    ElemType top_message;
+    ElemType bottom_message;
 
 public:
     Menu();
@@ -23,7 +23,7 @@ public:
     int getCapacity() const;
     int size() const;
     int read_option_number();
-    void push_back(ElemType e);
+    void push_back(const ElemType &e);
     void double_capacity();
 };
 

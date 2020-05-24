@@ -17,7 +17,7 @@ int main()
 void demoMenu()
 {
 	Menu menu;
-	cout << menu << endl;
+	//cout << menu << endl;
 
 	//int choice = menu.read_option_number();
 	//cout << "you entered: " << choice << endl;

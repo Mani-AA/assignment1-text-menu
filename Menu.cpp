@@ -8,6 +8,8 @@ Menu::Menu()
 {
     this->capacity = 1;
     this->count = 0;
+    this->top_message = "";
+    this->bottom_message = "";
     this->option_list = new ElemType[this->capacity];
 }
 
@@ -32,16 +34,16 @@ void Menu::double_capacity()
     {
         new_option_list[i] = this->option_list[i];
     }
-    
+
     delete[] this->option_list;
 
     this->option_list = new_option_list;
     this->capacity = newCapicity;
 }
 
-void Menu::push_back(ElemType e)
+void Menu::push_back(const ElemType &e)
 {
-    if (this->count == this->capacity)
+    if (this->size() == this->getCapacity())
     {
         double_capacity();
     }
@@ -62,10 +64,15 @@ int Menu::size() const
 void Menu::toStream(ostream &sout) const
 {
     sout << endl;
+    sout << top_message << endl;
+
     for (int k = 0; k < this->count; ++k)
     {
         sout << k + 1 << ": " << option_list[k] << endl;
     }
+
+    sout << bottom_message << endl;
+
     sout << "??";
 }
 
