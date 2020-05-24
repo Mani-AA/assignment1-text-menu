@@ -94,14 +94,20 @@ int Menu::size() const
 void Menu::toStream(ostream &sout) const
 {
     sout << endl;
-    sout << top_message << endl;
+    if (!top_message.isEmpty()) 
+    {
+        sout << top_message << endl;
+    }
 
     for (int k = 0; k < this->count; ++k)
     {
         sout << "  " << k + 1 << ": " << option_list[k] << endl;
     }
 
-    sout << bottom_message << endl;
+    if (!bottom_message.isEmpty())
+    {
+        sout << bottom_message << endl;
+    }
 
     sout << "??";
 }

@@ -72,12 +72,12 @@ void Text::clear()
     this->assign("");
 }
 
-int Text::length()
+int Text::length() const
 {
     return strlen(this->pStore);
 }
 
-bool Text::isEmpty()
+bool Text::isEmpty() const
 {
     return this->length() == 0;
 }

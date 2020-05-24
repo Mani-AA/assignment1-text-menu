@@ -16,11 +16,15 @@ int main()
 
 void demoMenu()
 {
+	//1) Create an empty menu
 	Menu menu;
-	//cout << menu << endl;
+	//2) Print and empty menu
+	cout << menu << endl;
 
-	//int choice = menu.read_option_number();
-	//cout << "you entered: " << choice << endl;
+	// 
+	/**
+	int choice = menu.read_option_number();
+	cout << "you entered: " << choice << endl;
 
 	menu.push_back("Pepsi");
 	menu.push_back("Apple juice");
@@ -40,6 +44,7 @@ void demoMenu()
 
 	menu.pop_back();
 	cout << menu << endl;
+	**/
 }
 
 void demoText()
