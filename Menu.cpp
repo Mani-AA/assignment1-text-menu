@@ -72,7 +72,7 @@ void Menu::double_capacity()
 
 void Menu::push_back(const ElemType &e)
 {
-    if (this->size() == this->getCapacity())
+    if (this->isFull())
     {
         double_capacity();
     }
@@ -82,7 +82,7 @@ void Menu::push_back(const ElemType &e)
 
 void Menu::insert(int index, const ElemType &e)
 {
-    if (this->size() == this->getCapacity())
+    if (this->isFull())
     {
         double_capacity();
     }
@@ -177,6 +177,11 @@ void Menu::pop_back()
 bool Menu::isEmpty()
 {
     return this->size() == 0;
+}
+
+bool Menu::isFull()
+{
+    return this->size() == this->capacity;
 }
 
 ElemType Menu::get(int k) const

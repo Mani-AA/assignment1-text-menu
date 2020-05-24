@@ -37,7 +37,7 @@ public:
     ElemType get_bottom_message() const;
     bool isEmpty();
     void toStream(ostream &sout) const;
-    
+    bool isFull();
 };
 
 ostream &operator<<(std::ostream &sout, const Menu &menu);
