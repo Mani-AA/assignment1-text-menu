@@ -25,6 +25,8 @@ public:
     int read_option_number();
     void push_back(const ElemType &e);
     void double_capacity();
+    void set_top_message(const ElemType &m);
+    void set_bottom_message(const ElemType &m);
 };
 
 ostream &operator<<(std::ostream &sout, const Menu &menu);

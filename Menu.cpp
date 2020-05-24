@@ -76,6 +76,15 @@ void Menu::toStream(ostream &sout) const
     sout << "??";
 }
 
+void Menu::set_top_message(const ElemType &m)
+{
+    this->top_message = m;
+}
+void Menu::set_bottom_message(const ElemType &m)
+{
+    this->bottom_message = m;
+}
+
 ostream &operator<<(ostream &sout, const Menu &menu)
 {
     menu.toStream(sout);

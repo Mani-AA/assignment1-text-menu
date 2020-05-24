@@ -25,7 +25,8 @@ void demoMenu()
 	menu.push_back("Pepsi");
 	menu.push_back("Apple juice");
 	menu.push_back("Root beer");
-	
+	menu.set_top_message("Choose your thirst crusher");
+	menu.set_bottom_message("Enter a drink number");
 	cout << menu << endl;
 }
 
