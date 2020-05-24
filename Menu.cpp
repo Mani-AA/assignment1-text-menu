@@ -2,8 +2,8 @@
 #include "Menu.h"
 #include <cstring>
 
-using std::cout;
 using std::cin;
+using std::cout;
 using std::endl;
 using std::ostream;
 
@@ -22,6 +22,21 @@ Menu::~Menu()
 }
 
 Menu::Menu(const Menu &mnu)
+{
+    this->deepCopy(mnu);
+}
+
+Menu &Menu::operator=(const Menu &m)
+{
+    if (this != &m)
+    {
+        delete[] this->option_list;
+        this->deepCopy(m);
+    }
+    return *this;
+}
+
+void Menu::deepCopy(const Menu &mnu)
 {
     this->capacity = mnu.getCapacity();
     this->count = mnu.size();
@@ -157,7 +172,7 @@ ElemType Menu::toString() const
     for (int k = 0; k < this->count; ++k)
     {
         repr.append("  ");
-        repr.append(std::to_string(k+1).c_str());
+        repr.append(std::to_string(k + 1).c_str());
         repr.append(": ");
         repr.append(option_list[k]);
         repr.append("\n");
@@ -171,7 +186,7 @@ ElemType Menu::toString() const
 
     repr.append("??");
     repr.append("\n");
-    
+
     return repr;
 }
 

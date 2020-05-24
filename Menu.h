@@ -16,9 +16,11 @@ private:
     ElemType top_message;
     ElemType bottom_message;
     void double_capacity();
+    void deepCopy(const Menu &m);
+
 public:
     Menu();
-    Menu(const Menu &mnu);  
+    Menu(const Menu &mnu);
     virtual ~Menu();
     void insert(int index, const ElemType &e);
     void push_back(const ElemType &e);
@@ -38,6 +40,7 @@ public:
     bool isEmpty();
     void toStream(ostream &sout) const;
     bool isFull();
+    Menu &operator=(const Menu &m);
 };
 
 ostream &operator<<(std::ostream &sout, const Menu &menu);
