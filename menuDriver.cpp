@@ -18,6 +18,15 @@ void demoMenu()
 {
 	Menu menu;
 	cout << menu << endl;
+
+	//int choice = menu.read_option_number();
+	//cout << "you entered: " << choice << endl;
+
+	menu.push_back("Pepsi");
+	menu.push_back("Apple juice");
+	menu.push_back("Root beer");
+	
+	cout << menu << endl;
 }
 
 void demoText()

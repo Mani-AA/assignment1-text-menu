@@ -12,7 +12,8 @@ Text::Text() : Text("")
 
 Text::Text(const char *pCstr)
 {
-    this->assign(pCstr);
+    this->pStore = new char[strlen(pCstr) + 1];
+    strcpy(this->pStore, pCstr);
 }
 
 Text::Text(const Text &txt) : Text(txt.getCstring())
