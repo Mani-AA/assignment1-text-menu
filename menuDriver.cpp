@@ -37,6 +37,9 @@ void demoMenu()
 	menu.pop_back();
 	menu.remove(1);
 	cout << menu << endl;
+
+	menu.pop_back();
+	cout << menu << endl;
 }
 
 void demoText()
