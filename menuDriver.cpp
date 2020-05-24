@@ -1,14 +1,23 @@
 #include <iostream>
 #include "Text.h"
+#include "Menu.h"
 
 using namespace std;
 
 void demoText();
+void demoMenu();
 
 int main()
 {
-	demoText();
+	//demoText();
+	demoMenu();
 	return 0;
+}
+
+void demoMenu()
+{
+	Menu menu;
+	cout << menu << endl;
 }
 
 void demoText()
