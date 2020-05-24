@@ -22,7 +22,7 @@ int Menu::read_option_number()
 {
     int choice;
     cin >> choice;
-    cout << this;
+    cout << *this;
     return choice;
 }
 
