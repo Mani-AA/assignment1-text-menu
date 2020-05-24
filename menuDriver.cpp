@@ -29,32 +29,34 @@ void demoMenu()
 	menu.push_back("Pepsi");
 	cout << menu << endl;
 
-	//5
+	//5 Let's add couple of more options to our menu
 	menu.push_back("Apple juice");
 	menu.push_back("Root beer");
 	choice = menu.read_option_number();
 	cout << "you entered: " << choice << endl;
-	
-	/**
-	menu.push_back("Pepsi");
-	menu.push_back("Apple juice");
-	menu.push_back("Root beer");
+
+	//6) Let's setup the top and bottom message
 	menu.set_top_message("Choose your thirst crusher");
 	menu.set_bottom_message("Enter a drink number");
 	cout << menu << endl;
 
+	//7) Let's remove the last option and then insert a new option at number 2
 	menu.pop_back();
 	menu.insert(2, "Icded tea with lemon");
-	int choice = menu.read_option_number();
+	choice = menu.read_option_number();
 	cout << "you entered: " << choice << endl;
 
+	//8) The menu object let's you remove an option by option number
 	menu.pop_back();
 	menu.remove(1);
 	cout << menu << endl;
 
+	//9) The following code segment removes the only remaining option, leaving the menu with an empty option list:
 	menu.pop_back();
 	cout << menu << endl;
-	**/
+
+	//10) Here is our final example
+	
 }
 
 void demoText()
