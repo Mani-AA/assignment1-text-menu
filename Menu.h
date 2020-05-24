@@ -15,21 +15,27 @@ private:
     int count;
     ElemType top_message;
     ElemType bottom_message;
-
+    void double_capacity();
 public:
     Menu();
+    Menu(const Menu &mnu);  
     virtual ~Menu();
-    void toStream(ostream &sout) const;
-    int getCapacity() const;
-    int size() const;
-    int read_option_number();
+    void insert(int index, const ElemType &e);
     void push_back(const ElemType &e);
-    void double_capacity();
+    void remove(int index);
+    int size() const;
+    int getCapacity() const;
+    void pop_back();
+    ElemType get(int k);
+    ElemType toString() const;
+    int read_option_number();
     void set_top_message(const ElemType &m);
     void set_bottom_message(const ElemType &m);
-    void pop_back();
-    void insert(int index, const ElemType &e);
-    void remove(int index);
+    void clear_top_message();
+    void clear_bottom_message();
+    bool isEmpty();
+    void toStream(ostream &sout) const;
+    
 };
 
 ostream &operator<<(std::ostream &sout, const Menu &menu);

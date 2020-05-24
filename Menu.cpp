@@ -27,16 +27,16 @@ int Menu::read_option_number()
         cout << *this;
         //Read user's input
         cin >> choice;
-        if ((this->size() == 0) || ((choice <= count) && (choice > 0)))
+        if (this->isEmpty() || ((choice <= count) && (choice > 0)))
         {
             break;
         }
         else
         {
-            cout << "Invalid choice " << choice << ". It must be in the range [1, " << count  << "]"<< endl;
+            cout << "Invalid choice " << choice << ". It must be in the range [1, " << count << "]" << endl;
         }
     }
-    
+
     return choice;
 }
 
@@ -73,10 +73,10 @@ void Menu::insert(int index, const ElemType &e)
         double_capacity();
     }
 
-    // shift elements forward 
-    for (int i = this->count; i >= index; i--) 
+    // shift elements forward
+    for (int i = this->count; i >= index; i--)
     {
-        this->option_list[i] = this->option_list[i - 1]; 
+        this->option_list[i] = this->option_list[i - 1];
     }
 
     // insert element at position index
@@ -86,10 +86,10 @@ void Menu::insert(int index, const ElemType &e)
 
 void Menu::remove(int index)
 {
-    // shift elements backward 
-    for (int i = index; i < count; i++) 
+    // shift elements backward
+    for (int i = index; i < count; i++)
     {
-        this->option_list[i-1] = this->option_list[i]; 
+        this->option_list[i - 1] = this->option_list[i];
     }
 
     this->count--;
@@ -108,7 +108,7 @@ int Menu::size() const
 void Menu::toStream(ostream &sout) const
 {
     sout << endl;
-    if (!top_message.isEmpty()) 
+    if (!top_message.isEmpty())
     {
         sout << top_message << endl;
     }
@@ -135,9 +135,29 @@ void Menu::set_bottom_message(const ElemType &m)
     this->bottom_message = m;
 }
 
+void Menu::clear_top_message()
+{
+    this->top_message = "";
+}
+
+void Menu::clear_bottom_message()
+{
+    this->bottom_message = "";
+}
+
 void Menu::pop_back()
 {
     this->count--;
+}
+
+bool Menu::isEmpty()
+{
+    return this->size() == 0;
+}
+
+ElemType Menu::get(int k)
+{
+    return this->option_list[k];
 }
 
 ostream &operator<<(ostream &sout, const Menu &menu)
