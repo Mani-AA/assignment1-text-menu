@@ -120,12 +120,6 @@ void Menu::pop_back()
     this->count--;
 }
 
-void Menu::error(std::string msg) const
-{
-    std::cerr << msg << "\n";
-    exit(EXIT_FAILURE);
-}
-
 ostream &operator<<(ostream &sout, const Menu &menu)
 {
     menu.toStream(sout);
