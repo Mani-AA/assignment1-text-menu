@@ -18,7 +18,8 @@ void demoMenu()
 {
 	//1) Create an empty menu
 	Menu menu;
-	//2) Print and empty menu
+
+	//2) Print an empty menu
 	cout << menu << endl;
 
 	//3) Display the menu and read user's input 
@@ -56,7 +57,16 @@ void demoMenu()
 	cout << menu << endl;
 
 	//10) Here is our final example
-	
+	menu.clear_bottom_message();
+	menu.set_top_message("Who Says You Can't Buy Happiness?\n"
+		"Just Consider Our Seriously Delicious Ice Cream Flavors");
+	menu.set_bottom_message("Enter the number of your happiness! ");
+	menu.push_back("Bacon ice cream!");
+	menu.push_back("Strawberry ice cream");
+	menu.push_back("Vanilla ice cream");
+	menu.push_back("Chocolate chip cookie dough ice cream");
+	choice = menu.read_option_number();
+	cout << "you entered: " << choice << endl;
 }
 
 void demoText()
