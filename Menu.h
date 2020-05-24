@@ -26,13 +26,15 @@ public:
     int size() const;
     int getCapacity() const;
     void pop_back();
-    ElemType get(int k);
+    ElemType get(int k) const;
     ElemType toString() const;
     int read_option_number();
     void set_top_message(const ElemType &m);
     void set_bottom_message(const ElemType &m);
     void clear_top_message();
     void clear_bottom_message();
+    ElemType get_top_message() const;
+    ElemType get_bottom_message() const;
     bool isEmpty();
     void toStream(ostream &sout) const;
     

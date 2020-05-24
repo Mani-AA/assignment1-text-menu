@@ -7,10 +7,21 @@ using namespace std;
 void demoText();
 void demoMenu();
 
+void demo3()
+{
+	Menu menu;
+	menu.push_back("Pepsi");
+	cout << menu << endl;
+
+	Menu menu2{menu};
+	cout << menu2 << endl;
+}
+
 int main()
 {
 	//demoText();
-	demoMenu();
+	//demoMenu();
+	demo3();
 	return 0;
 }
 

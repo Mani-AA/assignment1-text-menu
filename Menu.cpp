@@ -18,6 +18,20 @@ Menu::~Menu()
     delete[] option_list;
 }
 
+Menu::Menu(const Menu &mnu)
+{
+    this->capacity = mnu.getCapacity();
+    this->count = mnu.size();
+    this->top_message = mnu.get_top_message();
+    this->bottom_message = mnu.get_bottom_message();
+
+    this->option_list = new ElemType[this->capacity];
+    for (int k = 0; k < this->count; k++)
+    {
+        this->option_list[k] = mnu.get(k);
+    }
+}
+
 int Menu::read_option_number()
 {
     int choice{0};
@@ -135,6 +149,16 @@ void Menu::set_bottom_message(const ElemType &m)
     this->bottom_message = m;
 }
 
+ElemType Menu::get_top_message() const
+{
+    return this->top_message;
+}
+
+ElemType Menu::get_bottom_message() const
+{
+    return this->bottom_message;
+}
+
 void Menu::clear_top_message()
 {
     this->top_message = "";
@@ -155,7 +179,7 @@ bool Menu::isEmpty()
     return this->size() == 0;
 }
 
-ElemType Menu::get(int k)
+ElemType Menu::get(int k) const
 {
     return this->option_list[k];
 }
