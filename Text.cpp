@@ -55,7 +55,6 @@ void Text::append(const char *pCstr)
 {
     const char *old{this->pStore};
     int newLength = strlen(pCstr) + strlen(this->pStore) + 1;
-    delete[] this->pStore;
     this->pStore = new char[newLength];
     strcpy(this->pStore, old);
     strcat(this->pStore, pCstr);
