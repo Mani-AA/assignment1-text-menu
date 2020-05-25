@@ -53,12 +53,9 @@ Text &Text::operator=(const Text &txt)
 
 void Text::append(const char *pCstr)
 {
-    const char *old = this->pStore;
+    const char *old{this->pStore};
     int newLength = strlen(pCstr) + strlen(this->pStore) + 1;
-    if (this->pStore != nullptr)
-    {
-        delete[] this->pStore;
-    }
+    delete[] this->pStore;
     this->pStore = new char[newLength];
     strcpy(this->pStore, old);
     strcat(this->pStore, pCstr);
